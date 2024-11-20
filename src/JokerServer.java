@@ -11,7 +11,7 @@ import java.util.*;
 public class JokerServer {
     ArrayList<Player> playerList = new ArrayList<>();
     ArrayList<Socket> clientList = new ArrayList<>();
-    TreeMap<Socket, ArrayList<InetAddress>> gamePlayers;
+//    TreeMap<Socket, ArrayList<InetAddress>> gamePlayers;
     public static final int SIZE = 4;
     final int[] board = new int[SIZE * SIZE];
     private int combo;
@@ -50,7 +50,7 @@ public class JokerServer {
                         clientList.add(clientSocket);
                     }
                     synchronized (playerList) {
-                        playerList.add(new Player(clientSocket.getInetAddress().getHostAddress())); // initiate player
+                        playerList.add(new Player(clientSocket.getInetAddress().toString())); // initiate player
 
                         if (playerList.size() == 4) {
                             // start the game
@@ -159,7 +159,7 @@ public class JokerServer {
     private int getCurrentPlayerIndex(Socket clientSocket) {
         int index = 0;
         for (int i = 0; i < playerList.size(); i++) {
-            if (playerList.get(i).getIpAddress().equals(clientSocket.getInetAddress().getHostAddress())) {
+            if (playerList.get(i).getIpAddress().equals(clientSocket.getInetAddress().toString())) {
                 index = i;
             }
         }

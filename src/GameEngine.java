@@ -180,7 +180,7 @@ public class GameEngine {
 //    }
     public void sendPlayerName(String name) throws IOException {
         out.write('N');
-        out.write(name.length());
+        out.writeInt(name.length());
         out.write(name.getBytes());
     }
 

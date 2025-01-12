@@ -2,6 +2,10 @@
 
 BattleJoker game made multiplayer. Supports a single lobby of 4 concurrent players.
 
+## Video demo link
+
+https://youtu.be/VrVWoxTBfzk
+
 ## Extra Features
 
 - **Background Selector**
@@ -26,6 +30,8 @@ BattleJoker game made multiplayer. Supports a single lobby of 4 concurrent playe
     ```bash
     cd battleJoker
     ```
+3. Run JokerServer.java on server
+4. Run BattleJoker.java on clients and connect to server's IP and port
 
 ## Usage
 
